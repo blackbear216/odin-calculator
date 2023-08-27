@@ -14,8 +14,18 @@ function divide(a, b) {
     return a / b;
 }
 
-console.log(add(5, 7));
-console.log(subtract(5, 7));
-console.log(multiply(5, 7));
-console.log(divide(5, 7));
-console.log(divide(5, 0));
+let firstNum = 0;
+let operator = "+";
+let secondNum = 0;
+
+function operate(firstNum, operator, secondNum) {
+    if (operator == "+") {
+        return add(firstNum, secondNum);
+    } else if (operator == "-") {
+        return subtract(firstNum, secondNum);
+    } else if (operator == "*") {
+        return multiply(firstNum, secondNum);
+    } else if (operator == "/") {
+        return divide(firstNum, secondNum);
+    }
+}
