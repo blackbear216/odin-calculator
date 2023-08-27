@@ -5,12 +5,12 @@ body {
 }
 
 .container {
-    width: 400px;
-    height: 500px;
-    outline: solid 1px black;
+    width: 350px;
+    height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(50, 54, 58);
 }
 
 .calculator {
@@ -21,10 +21,11 @@ body {
 }
 
 .display {
-    width: 350px;
+    width: 300px;
     height: 75px;
-    outline: solid 1px black;
-    margin-bottom: 25px;
+    outline: solid 1px rgb(27, 29, 32);
+    background-color: rgb(69, 78, 85);
+    margin-top: 25px;
 }
 
 .buttons {
@@ -32,14 +33,15 @@ body {
     justify-content: center;
     align-items: center;   
     margin: 25px;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 200px;
 }
 
 .numpad {
     display: flex;
     flex-wrap: wrap;
     width: 150px;
+    margin-right: 10px;
 }
 
 .operators {
@@ -48,9 +50,41 @@ body {
     flex-direction: column;
     width: 100px;
     height: 200px;
+    margin-left: 10px;
 }
 
 button {
     width: 50px;
     height: 50px;
+
+    background-color: rgb(69, 78, 85);
+    border: 1px solid rgb(50, 54, 58);
+    font-size: 16px;
+    font-family: sans-serif;
+    transition-duration: 0.1s;
+    color: aliceblue;
+}
+
+button:hover {
+    background-color: rgba(95, 158, 160, 0.856);
+  }
+
+button:active {
+    background-color: rgb(69, 114, 116);
+  }
+
+.undo {
+    background-color:darkslategray;
+}
+
+.clear {
+    background-color:rgba(139, 0, 0, 0.747);
+}
+
+.add,
+.subtract,
+.multiply,
+.divide,
+.equal {
+    background-color:dimgray
 }
