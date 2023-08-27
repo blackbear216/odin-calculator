@@ -17,6 +17,11 @@ function divide(a, b) {
 let firstNum = 0;
 let operator = "+";
 let secondNum = 0;
+let displayValue = "";
+let operation = [];
+let lastKey = "operator";
+
+const display = document.querySelector('.display-text');
 
 function operate(firstNum, operator, secondNum) {
     if (operator == "+") {
@@ -29,3 +34,13 @@ function operate(firstNum, operator, secondNum) {
         return divide(firstNum, secondNum);
     }
 }
+
+function clickButton(key) {
+    displayValue = displayValue.concat(key);
+    operation.push(key);
+    display.textContent = displayValue;
+}
+
+
+
+

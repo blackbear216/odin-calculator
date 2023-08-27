@@ -21,11 +21,18 @@ body {
 }
 
 .display {
-    width: 300px;
-    height: 75px;
+    width: 280px;
+    height: 55px;
     outline: solid 1px rgb(27, 29, 32);
     background-color: rgb(69, 78, 85);
     margin-top: 25px;
+    color: aliceblue;
+    font-size: 25px;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    overflow-x: scroll;
 }
 
 .buttons {

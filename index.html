@@ -9,28 +9,30 @@
     <body>
         <div class="container">
             <div class="calculator">
-                <div class="display"></div>
+                <div class="display">
+                    <div class="display-text"></div>
+                </div>
                 <div class="buttons">
                     <div class="numpad">
-                        <button class="7">7</button>
-                        <button class="8">8</button>
-                        <button class="9">9</button>
-                        <button class="4">4</button>
-                        <button class="5">5</button>
-                        <button class="6">6</button>
-                        <button class="1">1</button>
-                        <button class="2">2</button>
-                        <button class="3">3</button>
-                        <button class="0">0</button>
+                        <button class="7" onclick="clickButton('7')">7</button>
+                        <button class="8" onclick="clickButton('8')">8</button>
+                        <button class="9" onclick="clickButton('9')">9</button>
+                        <button class="4" onclick="clickButton('4')">4</button>
+                        <button class="5" onclick="clickButton('5')">5</button>
+                        <button class="6" onclick="clickButton('6')">6</button>
+                        <button class="1" onclick="clickButton('1')">1</button>
+                        <button class="2" onclick="clickButton('2')">2</button>
+                        <button class="3" onclick="clickButton('3')">3</button>
+                        <button class="0" onclick="clickButton('0')">0</button>
                     </div>
                     <div class="operators">
-                        <button class="add">+</button>
-                        <button class="subtract">-</button>
-                        <button class="multiply">*</button>
-                        <button class="divide">/</button>
-                        <button class="undo">Undo</button>
-                        <button class="clear">Clear</button>
-                        <button class="equal">=</button>
+                        <button class="add" onclick="clickButton('+')">+</button>
+                        <button class="subtract" onclick="clickButton('-')">-</button>
+                        <button class="multiply" onclick="clickButton('*')">*</button>
+                        <button class="divide" onclick="clickButton('/')">/</button>
+                        <button class="undo" onclick="clickButton('undo')">Undo</button>
+                        <button class="clear" onclick="clickButton('clear')">Clear</button>
+                        <button class="equal" onclick="clickButton('=')">=</button>
                     </div>
                 </div>
             </div>
