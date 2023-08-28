@@ -1,3 +1,11 @@
+const operators = ['/', '*', '-', '+'];
+let result = 0;
+let displayValue = "";
+let operations = [];
+let currentNum = "";
+
+const display = document.querySelector('.display-text');
+
 function add(a, b) {
     return a + b;
 }
@@ -14,15 +22,6 @@ function divide(a, b) {
     return a / b;
 }
 
-let firstNum = 0;
-let operator = "+";
-let secondNum = 0;
-let displayValue = "";
-let operation = [];
-let lastKey = "operator";
-
-const display = document.querySelector('.display-text');
-
 function operate(firstNum, operator, secondNum) {
     if (operator == "+") {
         return add(firstNum, secondNum);
@@ -37,10 +36,71 @@ function operate(firstNum, operator, secondNum) {
 
 function clickButton(key) {
     displayValue = displayValue.concat(key);
-    operation.push(key);
     display.textContent = displayValue;
 }
 
+function getResult() {
+    parseDisplayValue();
+    console.log(operations);
+    resolveOperations('/', '*');
+    console.log(operations);
+    resolveOperations('-', '+');
+    console.log(operations);
+    operations = operations.filter(removeOperators);
+    console.log(operations);
+    result = operations.reduce(getSum, 0);
+    console.log(result);
 
+    displayValue = result;
+    display.textContent = displayValue;
 
+    operations = [];
+}
 
+function getSum(total, num) {
+    return total + Math.round(num);
+}
+
+function removeOperators(element) {
+    if (operators.includes(element)) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function resolveOperations(operator1, operator2) {
+    while (operations.includes(operator1)
+    || operations.includes(operator2)) {
+        for (let i = 0; i < operations.length; i++) {
+            if (operations[i+1] == operator1 
+                || operations[i+1] == operator2) {
+                    operations[i] = operate(
+                        Number(operations[i]), 
+                        operations[i+1], 
+                        Number(operations[i+2]));
+                        operations[i+1] = 'f';
+                        operations[i+2] = 'f';
+                        break;
+                }
+        }
+        operations = operations.filter((op) => {
+            return (op != 'f');
+        });
+        console.log(operations);
+    }
+}
+
+function parseDisplayValue() {
+    let currentEntry = "";
+    for (let i = 0; i < displayValue.length; i++) {
+        if (!(operators.includes(displayValue[i]))) {
+            currentEntry = currentEntry.concat(displayValue[i]);
+        } else {
+            operations.push(currentEntry);
+            operations.push(displayValue[i]);
+            currentEntry = "";
+        }
+    }
+    operations.push(currentEntry);
+}
