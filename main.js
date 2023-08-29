@@ -1,3 +1,11 @@
+//implement clear button
+//implement buttons greying out where appropriate
+//implement floating point . numbers
+//implement divide by 0 error
+//implement keyboard support
+
+
+
 const operators = ['/', '*', '-', '+'];
 let result = 0;
 let displayValue = "";
@@ -87,7 +95,6 @@ function resolveOperations(operator1, operator2) {
         operations = operations.filter((op) => {
             return (op != 'f');
         });
-        console.log(operations);
     }
 }
 
@@ -103,4 +110,9 @@ function parseDisplayValue() {
         }
     }
     operations.push(currentEntry);
+}
+
+function undo() {
+    displayValue = displayValue.substring(0, displayValue.length - 1);
+    display.textContent = displayValue;
 }
