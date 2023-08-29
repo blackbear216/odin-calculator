@@ -1,4 +1,3 @@
-//implement clear button
 //implement buttons greying out where appropriate
 //implement floating point . numbers
 //implement divide by 0 error
@@ -59,7 +58,7 @@ function getResult() {
     result = operations.reduce(getSum, 0);
     console.log(result);
 
-    displayValue = result;
+    displayValue = String(result);
     display.textContent = displayValue;
 
     operations = [];
@@ -114,5 +113,11 @@ function parseDisplayValue() {
 
 function undo() {
     displayValue = displayValue.substring(0, displayValue.length - 1);
+    console.log(displayValue);
+    display.textContent = displayValue;
+}
+
+function clearScreen() {
+    displayValue = "";
     display.textContent = displayValue;
 }
