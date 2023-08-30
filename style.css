@@ -95,3 +95,7 @@ button:active {
 .equal {
     background-color:dimgray
 }
+
+.disabled {
+    opacity: 0.4;
+}

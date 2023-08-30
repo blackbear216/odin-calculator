@@ -3,7 +3,12 @@
 //implement divide by 0 error
 //implement keyboard support
 
+//add an event listener for the general html button category
+//every time any button is pressed:
+//call greyOperators()
 
+//then figure out how to remove other css stylings from grey'd buttons
+//and figure out how to make them stop functioning in general
 
 const operators = ['/', '*', '-', '+'];
 let result = 0;
@@ -12,6 +17,12 @@ let operations = [];
 let currentNum = "";
 
 const display = document.querySelector('.display-text');
+const operatorButtons = document.querySelectorAll('.operator');
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', greyOperators);
+})
 
 function add(a, b) {
     return a + b;
@@ -44,6 +55,19 @@ function operate(firstNum, operator, secondNum) {
 function clickButton(key) {
     displayValue = displayValue.concat(key);
     display.textContent = displayValue;
+}
+
+function greyOperators() {
+    console.log(displayValue.slice(-1));
+    if (operators.includes(displayValue.slice(-1))) {
+        operatorButtons.forEach((button) => {
+            button.classList.add('disabled');
+        });
+    } else {
+        operatorButtons.forEach((button) => {
+            button.classList.remove('disabled');
+        });
+    }
 }
 
 function getResult() {
