@@ -1,14 +1,6 @@
-//implement buttons greying out where appropriate
 //implement floating point . numbers
 //implement divide by 0 error
 //implement keyboard support
-
-//add an event listener for the general html button category
-//every time any button is pressed:
-//call greyOperators()
-
-//then figure out how to remove other css stylings from grey'd buttons
-//and figure out how to make them stop functioning in general
 
 const operators = ['/', '*', '-', '+'];
 let result = 0;
